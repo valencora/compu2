@@ -37,9 +37,7 @@ def split_image(imagen, num_parts):
 
 def apply_filter(imagen, filter_type):
     filters = {
-        'emboss': ImageFilter.EMBOSS,
-        'blur': ImageFilter.BLUR,
-        'smooth': ImageFilter.SMOOTH,
+        'emboss': ImageFilter.EMBOSS
     }
     if filter_type in filters:
         return imagen.filter(filters[filter_type])
@@ -115,7 +113,7 @@ if __name__ == "__main__":
         processes = []
         parent_conns = []
 
-        filters = ['emboss', 'blur', 'smooth']
+        filters = ['emboss']
 
         for index in range(args.num_parts):
             start = index * part_size
